@@ -1,0 +1,61 @@
+body {
+    font-size: 1.125rem;
+    color: #707070;
+    margin: 0;
+    text-align: center;
+}
+
+/* Typography */
+
+h1 {
+    font-size: 3rem;
+    color: #212614;
+    text-align: center;
+}
+
+h1 span {
+    color: #b7832f;
+}
+
+
+
+
+/*  Layout  */
+
+
+.container {
+    width: 95%;
+    max-width: 980px;
+    margin: 0 auto;
+
+}
+
+
+.container textarea {
+    border: 5px solid rgb(0, 0, 0);
+    height: 20vh;
+    width: 60%;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+#btn {
+    background: lightcoral;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+    
+.output-container textarea {
+  
+    border: 5px solid;
+    height: 20vh;
+    width: 60%;
+    margin: 2rem;
+    padding: 1rem;
+    text-align: center;
+}
