@@ -4,21 +4,24 @@ let outputTextArea = document.querySelector('#textarea-output')
 
 let url="https://api.funtranslations.com/translate/doge.json"
 
-function createUrl (text){
-    return encodeURI(url + "?" + "text=" +text)
+function translateUrl(input) {
+    return url + `?text=` +input;
 }
 
-function errorHandler(error) {
-    alert('Looks like server is down. Please try again sfter sometime')
+function handleError(error) {
+    console.log("Error has occured", error)
+    alert("Please try agian. It seems the server is down 😭😭😭")
 }
 
-let translate = () => {
-    fetch(createUrl(inputTextArea.value))
-    .then(response => response.json())
-    .then(json =>{
-       outputTextArea.innerText = json.contents.translated
-    })
-    .catch(errorHandler())
-}
+function handleTranslateClick() {
+    let input  = inputTextArea.value;
 
-button.addEventListener('click',translate)
+    fetch(translateUrl(input))
+        .then(response => response.json())
+        .then(json => {
+            let translatedOutput = json.contents.translated;
+            outputTextArea.innerText = translatedOutput;
+        }).catch(handleError)
+
+}
+ button.addEventListener('click',handleTranslateClick)
